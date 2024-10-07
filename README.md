@@ -2,12 +2,16 @@
 # Steps to Run the App
 
 1. Build in Xcode 16.0.
+   
 	a. If you wish to enable the Debug UI which enables a picker at the top to force a particular state (Valid response, Empty response, Invalid API response, or choose at random), uncomment line 21 in `FetchMobileRecipesApp.swift`.
+
 	b. By default, the SwiftUI Preview for `FetchMobileRecipesView` has the debug UI enabled, so this can be an alternative to enabling in the app itself.
 2. Run in simulator. 
 
 # Focus Areas
 
+- App refresh was implemented using Pull-To-Refresh on a visible list (ie. non-error/empty state), using the `.refreshable()` modifier. For Error/Empty state screens, a "Refresh" button was implemented.
+- For an app-friendly way to force specific API response types, a toggleable "Debug UI" was implemented to force a specific type of response, or toggle the ability to choose at random for End-to-End testing purposes. To enable this, see Step 1a above.
 - Focus was placed on building out a solid architecture by leveraging the Model-View-ViewModel (MVVM) paradigm, utilizing Dependency Injection (DI) to create more testable/mockable components, and by separating the XCode project into relevant groups. This priority was made to provide a template for clean iOS app architecture to allow for easier refactoring and testability.
 - Dependencies were moved to the topmost App level in order to achieve Dependency Injection, with protocols implemented in order to create clean code that can be testable through the ability to inject Mocks (for SwiftUI Previews, XCTests unit tests) and mock implementations (for API client, etc).
 - App-level dependencies were moved into a top-level `Configuration` object that is created in `FetchMobileRecipesApp` and passed into the parent SwiftUI View as an `@EnvironmentObject`.
