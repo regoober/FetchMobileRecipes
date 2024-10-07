@@ -1,0 +1,36 @@
+{
+  "configurations" : [
+    {
+      "id" : "CB64F3C9-D089-4336-8D59-C14E24789387",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:FetchMobileRecipes.xcodeproj",
+      "identifier" : "7FC7C1B32CB114AE00642F63",
+      "name" : "FetchMobileRecipes"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : false,
+      "target" : {
+        "containerPath" : "container:FetchMobileRecipes.xcodeproj",
+        "identifier" : "7FC7C1C32CB114B000642F63",
+        "name" : "FetchMobileRecipesTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:FetchMobileRecipes.xcodeproj",
+        "identifier" : "7FC7C1CD2CB114B000642F63",
+        "name" : "FetchMobileRecipesUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

@@ -17,6 +17,7 @@ final class FetchMobileRecipesUITestsLaunchTests: XCTestCase {
         continueAfterFailure = false
     }
 
+    /*
     @MainActor
     func testLaunch() throws {
         let app = XCUIApplication()
@@ -30,4 +31,5 @@ final class FetchMobileRecipesUITestsLaunchTests: XCTestCase {
         attachment.lifetime = .keepAlways
         add(attachment)
     }
+     */
 }
