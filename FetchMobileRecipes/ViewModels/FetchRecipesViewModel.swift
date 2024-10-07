@@ -25,14 +25,14 @@ class FetchRecipesViewModel: ObservableObject {
             if delay != .milliseconds(0) {
                 try await Task.sleep(for: delay)
             }
-            try await fetchRecipes(endpoint ?? Endpoint.at(selectedEndpointIdx))
+            try await fetchRecipes(endpoint: endpoint ?? Endpoint.at(selectedEndpointIdx))
         } catch {
             errorText = error.localizedDescription
         }
     }
     
     @MainActor
-    private func fetchRecipes(_ endpoint: Endpoint) async throws {
+    func fetchRecipes(endpoint: Endpoint) async throws {
         do {
             let response: RecipesResponse = try await fetchAPIClient.fetch(endpoint)
             guard !response.recipes.isEmpty else {
